@@ -13,23 +13,103 @@
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 body {
-  background: #ffffff;
-  color: #1a1a1a;
+  background: #0a0a0f;
+  color: #e0e0e0;
   font-family: var(--font-sans);
+  overflow-x: hidden;
 }
 
-@keyframes count-up {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Canvas container */
+.canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
 }
 
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* Section panels */
+.section-panel {
+  background: rgba(10, 10, 15, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(232, 119, 34, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
 }
 
-@keyframes slide-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Loading screen */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0f;
+  transition: opacity 0.8s ease-out;
+}
+
+.loading-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Loading pulse */
+@keyframes loading-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+
+.loading-pulse {
+  animation: loading-pulse 1.5s ease-in-out infinite;
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-orange), var(--color-orange-light));
+  z-index: 60;
+  transition: width 0.1s linear;
+}
+
+/* Orange glow effect */
+.orange-glow {
+  box-shadow: 0 0 40px rgba(232, 119, 34, 0.15), 0 0 80px rgba(232, 119, 34, 0.05);
+}
+
+/* Stat counter styling */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hide scrollbar for cleaner look but keep scroll functionality */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(232, 119, 34, 0.3);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(232, 119, 34, 0.5);
 }
