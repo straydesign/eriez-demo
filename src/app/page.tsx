@@ -1,65 +1,157 @@
-import Image from "next/image";
+import Link from "next/link";
+import Hero from "@/components/Hero";
+import StatBar from "@/components/StatBar";
+import { categories } from "@/data/products";
+import { industries } from "@/data/industries";
 
-export default function Home() {
+const categoryDescriptions: Record<string, string> = {
+  "Magnetic Separation":
+    "High-intensity magnets for removing ferrous contaminants from bulk material streams.",
+  "Metal Detection":
+    "Advanced detectors for finding all types of metals in conveyed products.",
+  "Material Handling & Vibratory":
+    "Feeders, screeners, and vibrators for precision material flow control.",
+  Flotation:
+    "Column and mechanical flotation technologies for mineral recovery.",
+  "Fluid Recycling":
+    "Filters and magnetic cleaners for extending industrial fluid life.",
+  Metalworking:
+    "Lifting magnets, chucks, and demagnetizers for metal fabrication.",
+  "Screening & Classification":
+    "Vibratory screens and sifters for particle size separation.",
+  "Recycling Equipment":
+    "Eddy current separators and density sorters for material recovery.",
+};
+
+const topIndustries = industries.slice(0, 3);
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <Hero />
+      <StatBar />
+
+      {/* Product Categories */}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-navy-dark">
+              Our Product Categories
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-gray-dark">
+              Comprehensive separation and detection solutions for every
+              industrial application.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {categories.map((cat) => (
+              <Link
+                key={cat}
+                href={`/products?category=${encodeURIComponent(cat)}`}
+                className="group rounded-lg border border-gray-medium bg-white p-6 shadow-sm transition hover:shadow-md hover:border-orange/40"
+              >
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-navy/10">
+                  <svg
+                    className="h-6 w-6 text-navy"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-base font-semibold text-navy-dark group-hover:text-orange transition">
+                  {cat}
+                </h3>
+                <p className="mt-1 text-sm text-gray-dark line-clamp-2">
+                  {categoryDescriptions[cat]}
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Industries */}
+      <section className="bg-gray-light py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-navy-dark">
+              Industries We Serve
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-gray-dark">
+              Proven solutions across dozens of industries worldwide.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {topIndustries.map((ind) => (
+              <Link
+                key={ind.id}
+                href={`/products?industry=${encodeURIComponent(ind.name)}`}
+                className="group rounded-lg bg-white p-6 shadow-sm transition hover:shadow-md"
+              >
+                <span className="text-3xl">{ind.icon}</span>
+                <h3 className="mt-3 text-lg font-semibold text-navy-dark group-hover:text-orange transition">
+                  {ind.name}
+                </h3>
+                <p className="mt-1 text-sm text-gray-dark line-clamp-2">
+                  {ind.description}
+                </p>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link
+              href="/industries"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-orange hover:text-orange-dark transition"
+            >
+              See all {industries.length}+ industries
+              <span>&rarr;</span>
+            </Link>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-navy py-16 text-white sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold">Ready to Get Started?</h2>
+            <p className="mx-auto mt-3 max-w-xl text-gray-300">
+              Our team of separation technology experts is ready to help you find
+              the right solution for your application.
+            </p>
+          </div>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact"
+              className="rounded-md bg-orange px-8 py-3 text-sm font-semibold text-white transition hover:bg-orange-dark"
+            >
+              Get a Quote
+            </Link>
+            <Link
+              href="/contact"
+              className="rounded-md border border-white/30 px-8 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              Request Service
+            </Link>
+            <Link
+              href="/contact"
+              className="rounded-md border border-white/30 px-8 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              Find a Salesperson
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
