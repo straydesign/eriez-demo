@@ -31,41 +31,29 @@ export default function HeroSection() {
           data-hero-anim
           className="text-orange font-semibold tracking-[0.3em] uppercase text-sm mb-4"
         >
-          Since 1942
+          Interactive Experience Concept
         </p>
         <h1
           data-hero-anim
           className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight"
         >
-          Global Leader in{" "}
+          What if your website{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange to-orange-light">
-            Separation Technologies
+            could do this?
           </span>
         </h1>
         <p
           data-hero-anim
           className="mt-6 text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto"
         >
-          Engineering innovation for mining, food safety, recycling, and
-          industrial processing across six continents.
+          This is a concept built for Eriez. Scroll to watch the model come
+          apart, explore your data brought to life, and see what an immersive
+          web presence looks like for industrial brands.
         </p>
-        <div data-hero-anim className="mt-10 flex gap-4 justify-center flex-wrap">
-          <a
-            href="https://www.eriez.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 bg-orange hover:bg-orange-dark text-white font-semibold rounded-lg transition-colors"
-          >
-            Explore Solutions
-          </a>
-          <a
-            href="https://www.eriez.com/contact"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 border border-white/20 hover:border-orange/50 text-white font-semibold rounded-lg transition-colors hover:bg-white/5"
-          >
-            Get a Quote
-          </a>
+        <div data-hero-anim className="mt-10">
+          <span className="inline-block px-6 py-2 border border-white/10 rounded-full text-sm text-gray-500">
+            Built in 24 hours as a proof of concept
+          </span>
         </div>
         <div data-hero-anim className="mt-16 animate-bounce">
           <svg
@@ -81,6 +69,7 @@ export default function HeroSection() {
               d="M19 14l-7 7m0 0l-7-7m7 7V3"
             />
           </svg>
+          <span className="text-xs text-gray-600 mt-2 block">Scroll to explore</span>
         </div>
       </div>
     </div>

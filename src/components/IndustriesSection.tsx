@@ -31,11 +31,15 @@ export default function IndustriesSection() {
     >
       <div className="section-panel max-w-4xl w-full">
         <div className="text-center mb-8">
+          <p className="text-xs tracking-widest uppercase text-orange/60 mb-2">
+            Your real data, visualized
+          </p>
           <h2 className="text-2xl sm:text-3xl font-bold text-white">
             80+ Industries Served
           </h2>
           <p className="mt-2 text-gray-400">
-            Proven solutions across every major sector worldwide.
+            Every one of these could be an interactive landing page with
+            targeted product recommendations, case studies, and 3D demos.
           </p>
         </div>
 

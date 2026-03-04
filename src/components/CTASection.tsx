@@ -33,41 +33,39 @@ export default function CTASection() {
           data-cta-anim
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-white"
         >
-          Ready to{" "}
+          Let&apos;s build this{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange to-orange-light">
-            Transform
-          </span>{" "}
-          Your Process?
+            for real.
+          </span>
         </h2>
         <p data-cta-anim className="mt-6 text-lg text-gray-400">
-          Our engineers have solved separation challenges across 80+ industries
-          on six continents. Let&apos;s solve yours.
+          This was a proof of concept — imagine what we could do with your
+          actual 3D product models, your engineering data, and a real timeline.
         </p>
         <div
           data-cta-anim
           className="mt-10 flex gap-4 justify-center flex-wrap"
         >
           <a
-            href="https://www.eriez.com/contact"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:tom@straydesign.co"
             className="px-10 py-4 bg-orange hover:bg-orange-dark text-white font-semibold rounded-lg transition-colors text-lg"
           >
-            Get a Quote
+            Let&apos;s Talk
           </a>
           <a
-            href="tel:+18148352600"
+            href="https://straydesign.co"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-10 py-4 border border-white/20 hover:border-orange/50 text-white font-semibold rounded-lg transition-colors hover:bg-white/5 text-lg"
           >
-            Call (814) 835-2600
+            See More Work
           </a>
         </div>
         <div data-cta-anim className="mt-12 text-sm text-gray-600">
-          2200 Asbury Road, Erie, PA 16506 &middot; info@eriez.com
+          Tom Sesler &middot; Stray Design Co.
         </div>
         <div data-cta-anim className="mt-4 text-xs text-gray-700">
-          This is an interactive demo concept &middot; Not affiliated with Eriez
-          Manufacturing
+          Interactive experience concept for Eriez Manufacturing &middot; Not affiliated
         </div>
       </div>
     </div>

@@ -82,9 +82,16 @@ export default function StatsSection() {
       className="h-[100vh] flex items-center justify-start px-6"
     >
       <div data-stat-panel className="section-panel max-w-lg ml-4 sm:ml-12 lg:ml-20">
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8">
-          Trusted Worldwide
+        <p className="text-xs tracking-widest uppercase text-orange/60 mb-2">
+          Your story, told differently
+        </p>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+          The Eriez Legacy
         </h2>
+        <p className="text-sm text-gray-500 mb-8">
+          Real numbers. Imagine these counting up as a customer scrolls your
+          homepage instead of sitting static in a footer.
+        </p>
         <div className="grid grid-cols-2 gap-8">
           {stats.map((stat, i) => (
             <AnimatedStat
